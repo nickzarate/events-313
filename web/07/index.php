@@ -31,7 +31,7 @@ switch($action){
             break; 
         }
         else{
-            header("Location: ./?action=signIn");
+            header("Location: ./07/?action=signIn");
         }
     
     case 'signUp':
