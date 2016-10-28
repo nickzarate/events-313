@@ -9,7 +9,7 @@
                     //register the username and password and redirect to account page
                     $_SESSION['loggedin'] = true;
                     $_SESSION["id"] = $row['id'];
-                    header("Location: ./07/?action=account");
+                    header("Location: ./index.php/?action=account");
                 }
                 else{
                     echo "<span class='error'>Wrong Username or Password</span>";
@@ -36,7 +36,7 @@
                 </tr>
                 <tr><td colspan="3">&nbsp;</td></tr>
                 <tr>
-                    <td colspan="3">Don't have an account? <a href="./07/?action=signUp">Sign Up</a></td>
+                    <td colspan="3">Don't have an account? <a href="./index.php/?action=signUp">Sign Up</a></td>
                 </tr>
             </table>
         </form>
