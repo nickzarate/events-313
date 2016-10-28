@@ -21,7 +21,7 @@
                     //$_SESSION['loggedin'] = true;
                     //$_SESSION["username"] = $user['username'];
                     //$_SESSION["id"] = $user['id'];
-                    header("Location: /07/?action=signIn");
+                    header("Location: ./?action=signIn");
                 }
                 else{
                     if($error == "Passwords don't match. Try Again."){
@@ -46,7 +46,7 @@
                             </tr>
                             <tr>
                                 <td>Password</td>
-                                <td><input name="mypassword" type="password" id="reg-password" value="<?php echo $mypass;?>" onblur="validationPassword('reg-password')"/></td>       
+                                <td><input name="mypassword" type="password" id="reg-password" value="<?php echo $mypass;?>" onblur="validationPassword('reg-password')"/></td>
                                 <td><span class='error notMatch'><?= $errorMatch ?></span><span id="reg-password-error" class="errors"></span></td>
                             </tr>
                             <tr>
