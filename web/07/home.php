@@ -12,7 +12,7 @@ require('db_connection.php');
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script language="JavaScript" src="./07/otherFunctions.js"></script>
+  <script type="text/javascript" src="otherFunctions.js"></script>
 </head>
 <body>
 
@@ -24,7 +24,7 @@ require('db_connection.php');
   </ul>
   <div class="tab-content">
     <div id="all_events" class="tab-pane fade in active">
-      <button onClick="javascript:refreshEvents()">Refresh Events</button>
+      <button onClick="refreshEvents();">Refresh Events</button>
       <?php
         foreach ($db->query('SELECT * FROM event') -> fetchAll() as $events) {
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['form'] == 'form2') {
