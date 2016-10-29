@@ -8,7 +8,20 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://serene-badlands-90671.herokuapp.com/07/other.js"></script>
+  <script type="text/javascript">
+    function refreshEvents() {
+      console.log("refresh events called");
+      $.get('http://calendar.byui.edu/RSSFeeds.aspx?data=tq9cbc8b%2btuQeZGvCTEMSP%2bfv3SYIrjQ3VTAXA335bE0WtJCqYU4mp9MMtuSlz6MRZ4LbMUU%2fO4%3d', function (data) {
+        $(data).find("item").each(function () { // or "item" or whatever suits your feed
+          var el = $(this);
+          console.log("------------------------");
+          console.log("title      : " + el.find("title").text());
+          console.log("author     : " + el.find("author").text());
+          console.log("description: " + el.find("description").text());
+        });
+      });
+    }
+  </script>
 </head>
 <body>
 
