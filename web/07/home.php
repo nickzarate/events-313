@@ -6,12 +6,13 @@ require('db_connection.php');
 
 <html lang="en">
 <head>
-  <title>Bootstrap Case</title>
+  <title>BYU-Idaho Events</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="./otherFunctions.js"></script>
 </head>
 <body>
 
@@ -23,6 +24,7 @@ require('db_connection.php');
   </ul>
   <div class="tab-content">
     <div id="all_events" class="tab-pane fade in active">
+      <button onClick="refreshEvents()">Refresh Events</button>
       <?php
         foreach ($db->query('SELECT * FROM event') -> fetchAll() as $events) {
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['form'] == 'form2') {
