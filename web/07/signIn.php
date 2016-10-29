@@ -2,14 +2,14 @@
 <body>
     <h1>Sign In</h1>
     <main>
-        <?php 
+        <?php
             if(isset($_POST['Submit'])){
                 if($count == 1){
                     //session_start();
                     //register the username and password and redirect to account page
                     $_SESSION['loggedin'] = true;
                     $_SESSION["id"] = $row['id'];
-                    header("Location: ./index.php/?action=account");
+                    header("Location: ./index.php/?action=home");
                 }
                 else{
                     echo "<span class='error'>Wrong Username or Password</span>";

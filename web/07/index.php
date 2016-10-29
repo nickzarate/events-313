@@ -24,10 +24,10 @@ switch($action){
         include ("signIn.php");
         break;
     
-    case 'account':
+    case 'home':
         if($_SESSION['loggedin']){
             $row = get_user();
-            include ("account.php");
+            include ("home.php");
             break; 
         }
         else{
