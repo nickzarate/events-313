@@ -6,6 +6,7 @@
     color:red;
   }
 </style>
+<script type="text/javascript" src="./other.js"></script>
 <?php
   function validateText($text){
     return (strlen($text) >= 4);
