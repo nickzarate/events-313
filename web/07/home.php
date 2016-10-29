@@ -24,7 +24,7 @@ require('db_connection.php');
   </ul>
   <div class="tab-content">
     <div id="all_events" class="tab-pane fade in active">
-      <button onClick="refreshEvents();">Refresh Events</button>
+      <button onClick="refreshEvents()">Refresh Events</button>
       <?php
         foreach ($db->query('SELECT * FROM event') -> fetchAll() as $events) {
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['form'] == 'form2') {
