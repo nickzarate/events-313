@@ -1,8 +1,3 @@
-<html>
-<head>
-<script type="text/javascript" src="otherFunctions.js"></script>
-</head>
-
 <?php 
     session_start();
     require 'db_connection.php';
@@ -45,5 +40,3 @@ switch($action){
         break;
 }
 ?>
-
-</html>

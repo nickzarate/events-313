@@ -1,9 +1,5 @@
 <!DOCTYPE html>
 
-<?php
-require('db_connection.php');
-?>
-
 <html lang="en">
 <head>
   <title>BYU-Idaho Events</title>
@@ -12,7 +8,7 @@ require('db_connection.php');
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <!-- <script type="text/javascript" src="otherFunctions.js"></script> -->
+  <script type="text/javascript" src="./otherFunctions.js"></script>
 </head>
 <body>
 
