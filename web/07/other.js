@@ -5,10 +5,14 @@ function refreshEvents() {
       var el = $(this);
       var time = "";
       var description = el.find("description").text();
+      var location = "";
       for (var i = 0; i < description.length; i++) {
         if (description.charAt(i) === '-') {
           time = description.substring(0, i - 1);
           description = description.substring(i + 2);
+        }
+        if (description.charAt(i) === ':') {
+          location = description.substring(0, i);
           break;
         }
       }
@@ -16,6 +20,7 @@ function refreshEvents() {
       console.log("title: " + el.find("title").text());
       console.log("time: " + time);
       console.log("description: " + description);
+      console.log("location: " + location);
     });
   });
 }
