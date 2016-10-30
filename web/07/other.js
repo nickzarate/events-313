@@ -9,10 +9,12 @@ function refreshEvents() {
       for (var i = 0; i < description.length; i++) {
         if (description.charAt(i) === '-') {
           time = description.substring(0, i - 1);
+          description = description.substring(i + 2);
         }
+      }
+      for (var j = 0; j < description.length; j++) {
         if (description.charAt(i) === ':') {
           location = description.substring(0, i);
-          description = description.substring(i + 2);
           break;
         }
       }
