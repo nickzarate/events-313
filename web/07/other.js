@@ -20,6 +20,10 @@ function refreshEvents() {
           break;
         }
       }
+      if (location.length === 0) {
+        location = description;
+        description = "";
+      }
       console.log("------------------------");
       console.log("title: " + el.find("title").text());
       console.log("time: " + time);
