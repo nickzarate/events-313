@@ -13,6 +13,7 @@ function refreshEvents() {
         if (description.charAt(i) === '-') {
           time = description.substring(0, i - 1);
           description = description.substring(i + 2);
+          break;
         }
       }
       console.log("before getting the location");
