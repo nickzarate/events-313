@@ -7,14 +7,15 @@ function refreshEvents() {
       var description = el.find("description").text();
       for (var i = 0; i < description.length; i++) {
         if (description.charAt(i) === '-') {
-          time += description.substring(0, i - 1);
-          console.log(time);
+          time = description.substring(0, i - 1);
+          description = description.substring(i + 2);
+          break;
         }
       }
       console.log("------------------------");
-      console.log("title      : " + el.find("title").text());
-      console.log("author     : " + el.find("author").text());
-      console.log("description: " + el.find("description").text());
+      console.log("title: " + el.find("title").text());
+      console.log("time: " + time);
+      console.log("description: " + description);
     });
   });
 }
