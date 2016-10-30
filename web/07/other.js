@@ -20,9 +20,9 @@ function refreshEvents() {
       console.log(description);
       console.log(time);
       for (var j = 0; j < description.length; j++) {
-        if (description.charAt(i) === ':') {
-          location = description.substring(0, i);
-          description = description.substring(i + 2);
+        if (description.charAt(j) === ':') {
+          location = description.substring(0, j);
+          description = description.substring(j + 2);
           break;
         }
       }
