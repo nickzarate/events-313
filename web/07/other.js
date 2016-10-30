@@ -6,9 +6,6 @@ function refreshEvents() {
       var time = "";
       var description = el.find("description").text();
       var location = "";
-      console.log("before getting the time");
-      console.log(description);
-      console.log(time);
       for (var i = 0; i < description.length; i++) {
         if (description.charAt(i) === '-') {
           time = description.substring(0, i - 1);
@@ -16,9 +13,6 @@ function refreshEvents() {
           break;
         }
       }
-      console.log("before getting the location");
-      console.log(description);
-      console.log(time);
       for (var j = 0; j < description.length; j++) {
         if (description.charAt(j) === ':') {
           location = description.substring(0, j);
