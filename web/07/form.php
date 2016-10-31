@@ -65,7 +65,7 @@ require('db_connection.php');
         $("#addForm").submit(function(e) {
           $.ajax({
             type: "POST",
-            url: "week6_form.php",
+            url: "form.php",
             data: $(this).serialize()
           }).done(function(data) {
             $("#results").html(data);
