@@ -97,6 +97,7 @@
         echo "<p>H" . $char . "H</p>";
         if (strcmp($char, "-") === 0) {
           $time = substr($description, 0, $i);
+          echo "<p>time" . $entry->time . "time</p>";
           $description = substr($description, $i + 2);
           break;
         }
@@ -117,7 +118,6 @@
       }
       echo "<h3>" . $entry->title . "</h3>";
       echo "<p>location" . $entry->location . "location</p>";
-      echo "<p>time" . $entry->time . "time</p>";
       // echo "<p>" . $entry->description . "</p>";
     }
     // echo "</ul>";
