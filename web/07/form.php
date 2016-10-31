@@ -96,14 +96,6 @@ require('db_connection.php');
     <b>Description: </b><span><?= $descriptionErr;?></span><br>
     <textarea cols="30" rows="4" name="description"><?=$description?></textarea>
     <br><br>
-    <b>Topics: </b><span><?= $topicErr;?></span><br>
-    <?php
-    foreach($db->query('SELECT * FROM Topics')->fetchAll() as $topic){
-      echo "<input type='checkbox' name='topics[]' value='" . $topic['id'] . "'>" . $topic['name'] . "<br>";
-    }
-    ?>
-    <input type="checkbox" name="topics[]" value="0"><input type="text" name="Other" onfocus="$(this).prev(':checkbox').prop('checked', 'checked');" /><br>
-    <br><br>
     <input type="hidden" name="form" value="form1" />
 
     <input type="submit" value="Submit">
