@@ -22,6 +22,12 @@
   <div class="tab-content">
     <div id="school_events" class="tab-pane fade in active">
       <?php
+        getFeed("https://calendar.byui.edu/RSSFeeds.aspx?data=tq9cbc8b%2btuQeZGvCTEMSP%2bfv3SYIrjQ3VTAXA335bE0WtJCqYU4mp9MMtuSlz6MRZ4LbMUU%2fO4%3d");
+      ?>
+    </div>
+    <div id="public_events" class="tab-pane fade">
+      <p>Here will be all public events in the database</p>
+      <?php
         foreach ($db->query('SELECT * FROM event') -> fetchAll() as $events) {
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['form'] == 'form2') {
           //   if ($_POST["books"] == $books["book"]) {
@@ -33,13 +39,6 @@
           echo '<h4>' . $events['title'] . '</h4>' . '<p>' . $events['description'] . '</p>';
         }
       ?>
-      <p>Here will be all events in the database</p>
-    </div>
-    <div id="public_events" class="tab-pane fade">
-      <p>Here will be all public events in the database</p>
-      <?php
-        getFeed("https://calendar.byui.edu/RSSFeeds.aspx?data=tq9cbc8b%2btuQeZGvCTEMSP%2bfv3SYIrjQ3VTAXA335bE0WtJCqYU4mp9MMtuSlz6MRZ4LbMUU%2fO4%3d");
-      ?>
     </div>
     <div id="my_events" class="tab-pane fade">
       <h3>My Events</h3>
@@ -50,12 +49,6 @@
       <?php
         include("form.php");
       ?>
-      <!-- <form>
-        <input type="text" placeholder="title" />
-        <input type="text" placeholder="time" />
-        <input type="text" placeholder="location" />
-        <textarea cols="30" rows="4" name="description"><?=$description?></textarea>
-      </form> -->
     </div>
   </div>
 </div>

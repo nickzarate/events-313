@@ -85,7 +85,6 @@
     $content = file_get_contents($feed_url);
     $x = new SimpleXmlElement($content);
 
-    // echo "<ul>";
     foreach($x->channel->item as $entry) {
       $description = $entry->description;
       $time = "";
@@ -94,12 +93,8 @@
 
       for($i = 0; $i < $strlen; $i++) {
         $char = substr($description, $i, 1);
-        // echo "<p>H" . $char . "H</p>";
         if (strcmp($char, "-") === 0) {
           $time = substr($description, 0, $i);
-          // echo "<p>time" . $time . "time</p>";
-          // echo "<p>description" . $description . "description</p>";
-          // echo "<p>i" . $i . "i</p>";
           $description = substr($description, $i + 2);
           break;
         }
@@ -123,6 +118,5 @@
       echo "<p>" . $location . "</p>";
       echo "<p>" . $description . "</p>";
     }
-    // echo "</ul>";
   }
 ?>
