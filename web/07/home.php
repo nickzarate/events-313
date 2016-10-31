@@ -8,19 +8,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="https://serene-badlands-90671.herokuapp.com/07/other.js"></script>
 </head>
 <body>
 
 <div class="container">
   <h2>Welcome <?= $row['username']; ?>!</h2>
   <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#all_events">All Events</a></li>
+    <li class="active"><a data-toggle="tab" href="#school_events">School Events</a></li>
+    <li><a data-toggle="tab" href="#public_events">Public Events</a></li>
     <li><a data-toggle="tab" href="#my_events">My Events</a></li>
+    <li><a data-toggle="tab" href="#create_event">Create An Event</a></li>
   </ul>
   <div class="tab-content">
-    <div id="all_events" class="tab-pane fade in active">
-      <button onClick="refreshEvents()">Refresh Events</button>
+    <div id="school_events" class="tab-pane fade in active">
       <?php
         foreach ($db->query('SELECT * FROM event') -> fetchAll() as $events) {
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['form'] == 'form2') {
@@ -35,9 +35,34 @@
       ?>
       <p>Here will be all events in the database</p>
     </div>
+    <div class="tab-content">
+    <div id="public_events" class="tab-pane fade in active">
+      <p>Here will be all public events in the database</p>
+      <?php
+        getFeed("https://calendar.byui.edu/RSSFeeds.aspx?data=tq9cbc8b%2btuQeZGvCTEMSP%2bfv3SYIrjQ3VTAXA335bE0WtJCqYU4mp9MMtuSlz6MRZ4LbMUU%2fO4%3d");
+        $x = new SimpleXmlElement($content);
+        echo "<ul>";
+        foreach($x->channel->item as $entry) {
+            echo "<li>" . $entry->title . "</li>";
+        }
+        echo "</ul>";
+      ?>
+    </div>
     <div id="my_events" class="tab-pane fade">
       <h3>My Events</h3>
       <p>Here will be all of my events</p>
+    </div>
+    <div id="create_event" class="tab-pane fade">
+      <h3>Create An Event!</h3>
+      <?php
+        include("form.php");
+      ?>
+      <!-- <form>
+        <input type="text" placeholder="title" />
+        <input type="text" placeholder="time" />
+        <input type="text" placeholder="location" />
+        <textarea cols="30" rows="4" name="description"><?=$description?></textarea>
+      </form> -->
     </div>
   </div>
 </div>

@@ -24,11 +24,6 @@ function refreshEvents() {
         location = description;
         description = "";
       }
-      console.log("------------------------");
-      console.log("title: " + el.find("title").text());
-      console.log("time: " + time);
-      console.log("description: " + description);
-      console.log("location: " + location);
     });
   });
 }
