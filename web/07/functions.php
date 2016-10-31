@@ -100,9 +100,10 @@
           break;
         }
       }
+      echo "<p>H" . $time . "</p>";
 
       $strlen = strlen($description);
-      for($j = 0; $j <= $strlen; $j++) {
+      for($j = 0; $j < $strlen; $j++) {
         $char = substr($str, $j, 1);
         if (strcmp($char, ":") === 0) {
           $location = substr($description, 0, $j);
