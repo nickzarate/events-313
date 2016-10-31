@@ -35,7 +35,7 @@
       ?>
       <p>Here will be all events in the database</p>
     </div>
-    <div id="public_events" class="tab-pane fade in active">
+    <div id="public_events" class="tab-pane fade">
       <p>Here will be all public events in the database</p>
       <?php
         getFeed("https://calendar.byui.edu/RSSFeeds.aspx?data=tq9cbc8b%2btuQeZGvCTEMSP%2bfv3SYIrjQ3VTAXA335bE0WtJCqYU4mp9MMtuSlz6MRZ4LbMUU%2fO4%3d");
