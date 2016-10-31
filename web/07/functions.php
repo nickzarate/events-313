@@ -97,7 +97,9 @@
         echo "<p>H" . $char . "H</p>";
         if (strcmp($char, "-") === 0) {
           $time = substr($description, 0, $i);
-          echo "<p>time" . $entry->time . "time</p>";
+          echo "<p>time" . $time . "time</p>";
+          echo "<p>description" . $description . "description</p>";
+          echo "<p>i" . $i . "i</p>";
           $description = substr($description, $i + 2);
           break;
         }
