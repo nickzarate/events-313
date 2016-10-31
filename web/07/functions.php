@@ -85,10 +85,40 @@
     $content = file_get_contents($feed_url);
     $x = new SimpleXmlElement($content);
 
-    echo "<ul>";
+    // echo "<ul>";
     foreach($x->channel->item as $entry) {
-        echo "<li>" . $entry->title . "</li>";
+      $description = $entry->description;
+      $time = "";
+      $location = "";
+      $strlen = strlen($description);
+
+      for($i = 0; $i < $strlen; $i++) {
+        $char = substr($str, $i, 1);
+        if (strcmp($char, "-") === 0) {
+          $time = substr($description, 0, $i);
+          $description = substr($description, $i + 2);
+          break;
+        }
+      }
+
+      $strlen = strlen($description);
+      for($j = 0; $j <= $strlen; $j++) {
+        $char = substr($str, $j, 1);
+        if (strcmp($char, ":") === 0) {
+          $location = substr($description, 0, $j);
+          $description = substr($description, $j + 2);
+          break;
+        }
+      }
+      if (strlen($location) === 0) {
+        $location = $description;
+        $description = "";
+      }
+      echo "<h3>" . $entry->title . "</h3>";
+      echo "<p>" . $entry->location . "</p>";
+      echo "<p>" . $entry->time . "</p>";
+      echo "<p>" . $entry->description . "</p>";
     }
-    echo "</ul>";
-}
+    // echo "</ul>";
+  }
 ?>
