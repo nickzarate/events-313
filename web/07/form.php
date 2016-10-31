@@ -34,7 +34,7 @@ require('db_connection.php');
       if($titleErr == "" && $timeErr == "" && $locationErr == "" && $descriptionErr == ""){
 
         $db->exec("INSERT INTO events (title, time, location, description) VALUES ('$title', '$time', '$location', '$description')");
-        $sid = $db->lastInsertId('events_id_seq');
+        // $sid = $db->lastInsertId('events_id_seq');
         // if($newTopic != ""){
         //   $db->exec("INSERT INTO topics (name) VALUES ('$newTopic')");
         //   $topicId = $db->lastInsertId('topics_id_seq');
@@ -47,6 +47,12 @@ require('db_connection.php');
         $title = $time = $location = $description = "";
         $titleErr = $timeErr = $locationErr = $descriptionErr = "";
 
+      } else if ($titleErr == "" && $timeErr == "" && $locationErr == "") {
+        $db->exec("INSERT INTO events (title, time, location, description) VALUES ('$title', '$time', '$location', NULL)");
+
+        $title = $time = $location = $description = "";
+        $titleErr = $timeErr = $locationErr = $descriptionErr = "";
+        // $sid = $db->lastInsertId('events_id_seq');
       }
     }
   }
@@ -86,24 +92,21 @@ require('db_connection.php');
   </head>
 <body>
   <div id="results">
-  <form action="" method="post" id="addForm">
-    <b>Title: </b><span><?= $titleErr;?></span><br>
-    <input type="text" name="title" value="<?=$title?>"><br><br>
-    <b>Time: </b><span><?= $timeErr;?></span><br>
-    <input type="text" name="time" value="<?=$time?>"><br><br>
-    <b>Location: </b><span><?= $locationErr;?></span><br>
-    <input type="text" name="location" value="<?=$location?>"><br><br>
-    <b>Description: </b><span><?= $descriptionErr;?></span><br>
-    <textarea cols="30" rows="4" name="description"><?=$description?></textarea>
-    <br><br>
-    <input type="hidden" name="form" value="form1" />
+    <form action="" method="post" id="addForm">
+      <b>Title: </b><span><?= $titleErr;?></span><br>
+      <input type="text" name="title" value="<?=$title?>"><br><br>
+      <b>Time: </b><span><?= $timeErr;?></span><br>
+      <input type="text" name="time" value="<?=$time?>"><br><br>
+      <b>Location: </b><span><?= $locationErr;?></span><br>
+      <input type="text" name="location" value="<?=$location?>"><br><br>
+      <b>Description: </b><span><?= $descriptionErr;?></span><br>
+      <textarea cols="30" rows="4" name="description"><?=$description?></textarea>
+      <br><br>
+      <input type="hidden" name="form" value="form1" />
 
-    <input type="submit" value="Submit">
-    <br><br>
-  </form>
-    <div id="scriptures">
-      <?php include('week6.php');?>
-    </div>
+      <input type="submit" value="Submit">
+      <br><br>
+    </form>
   </div>
 </body>
 </html>
