@@ -35,17 +35,10 @@
       ?>
       <p>Here will be all events in the database</p>
     </div>
-    <div class="tab-content">
     <div id="public_events" class="tab-pane fade in active">
       <p>Here will be all public events in the database</p>
       <?php
         getFeed("https://calendar.byui.edu/RSSFeeds.aspx?data=tq9cbc8b%2btuQeZGvCTEMSP%2bfv3SYIrjQ3VTAXA335bE0WtJCqYU4mp9MMtuSlz6MRZ4LbMUU%2fO4%3d");
-        $x = new SimpleXmlElement($content);
-        echo "<ul>";
-        foreach($x->channel->item as $entry) {
-            echo "<li>" . $entry->title . "</li>";
-        }
-        echo "</ul>";
       ?>
     </div>
     <div id="my_events" class="tab-pane fade">
