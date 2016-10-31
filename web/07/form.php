@@ -65,7 +65,7 @@ require('db_connection.php');
         $("#addForm").submit(function(e) {
           $.ajax({
             type: "POST",
-            url: "form.php",
+            url: "https://serene-badlands-90671.herokuapp.com/07/form.php",
             data: $(this).serialize()
           }).done(function(data) {
             $("#results").html(data);
