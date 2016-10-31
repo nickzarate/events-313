@@ -116,8 +116,8 @@
         $description = "";
       }
       echo "<h3>" . $entry->title . "</h3>";
-      echo "<p>" . $entry->location . "</p>";
-      echo "<p>" . $entry->time . "</p>";
+      echo "<p>location" . $entry->location . "location</p>";
+      echo "<p>time" . $entry->time . "time</p>";
       // echo "<p>" . $entry->description . "</p>";
     }
     // echo "</ul>";
