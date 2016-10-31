@@ -28,7 +28,7 @@
     <div id="public_events" class="tab-pane fade">
       <p>Here will be all public events in the database</p>
       <?php
-        foreach ($db->query('SELECT * FROM event') -> fetchAll() as $events) {
+        foreach ($db->query('SELECT * FROM events') -> fetchAll() as $events) {
           // if ($_SERVER["REQUEST_METHOD"] == "POST" && $_POST['form'] == 'form2') {
           //   if ($_POST["books"] == $books["book"]) {
           //     $selected = "selected='selected'";
