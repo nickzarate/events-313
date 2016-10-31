@@ -34,15 +34,6 @@ require('db_connection.php');
       if($titleErr == "" && $timeErr == "" && $locationErr == "" && $descriptionErr == ""){
 
         $db->exec("INSERT INTO events (title, time, location, description) VALUES ('$title', '$time', '$location', '$description')");
-        // $sid = $db->lastInsertId('events_id_seq');
-        // if($newTopic != ""){
-        //   $db->exec("INSERT INTO topics (name) VALUES ('$newTopic')");
-        //   $topicId = $db->lastInsertId('topics_id_seq');
-        //   $db->exec("INSERT INTO topicconnections (sid, tid) VALUES ('$sid', '$topicId')");
-        // }
-        // for($i = 0; $i < count($topics); $i++){
-        //   $db->exec("INSERT INTO topicconnections (sid, tid) VALUES ('$sid', '" . $topics["$i"] . "')");
-        // }
 
         $title = $time = $location = $description = "";
         $titleErr = $timeErr = $locationErr = $descriptionErr = "";
@@ -52,7 +43,6 @@ require('db_connection.php');
 
         $title = $time = $location = $description = "";
         $titleErr = $timeErr = $locationErr = $descriptionErr = "";
-        // $sid = $db->lastInsertId('events_id_seq');
       }
     }
   }
@@ -103,7 +93,6 @@ require('db_connection.php');
       <textarea cols="30" rows="4" name="description"><?=$description?></textarea>
       <br><br>
       <input type="hidden" name="form" value="form1" />
-
       <input type="submit" value="Submit">
       <br><br>
     </form>

@@ -16,7 +16,6 @@
   <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#school_events">School Events</a></li>
     <li><a data-toggle="tab" href="#public_events">Public Events</a></li>
-    <li><a data-toggle="tab" href="#my_events">My Events</a></li>
     <li><a data-toggle="tab" href="#create_event">Create An Event</a></li>
   </ul>
   <div class="tab-content">
@@ -36,13 +35,9 @@
           //     $selected = "";
           //   }
           // }
-          echo '<h4>' . $events['title'] . '</h4>' . '<p>' . $events['description'] . '</p>';
+          echo '<h3>' . $events['title'] . '</h3>' . '<p>' . $events['description'] . '</p>';
         }
       ?>
-    </div>
-    <div id="my_events" class="tab-pane fade">
-      <h3>My Events</h3>
-      <p>Here will be all of my events</p>
     </div>
     <div id="create_event" class="tab-pane fade">
       <h3>Create An Event!</h3>
