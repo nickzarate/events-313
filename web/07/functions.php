@@ -94,7 +94,7 @@
 
       for($i = 0; $i < $strlen; $i++) {
         $char = substr($description, $i, 1);
-        // echo "<p>H" . $char . "H</p>";
+        echo "<p>H" . $char . "H</p>";
         if (strcmp($char, "-") === 0) {
           $time = substr($description, 0, $i);
           $description = substr($description, $i + 2);
@@ -118,7 +118,7 @@
       echo "<h3>" . $entry->title . "</h3>";
       echo "<p>" . $entry->location . "</p>";
       echo "<p>" . $entry->time . "</p>";
-      echo "<p>" . $entry->description . "</p>";
+      // echo "<p>" . $entry->description . "</p>";
     }
     // echo "</ul>";
   }
