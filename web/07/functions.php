@@ -94,12 +94,12 @@
 
       for($i = 0; $i < $strlen; $i++) {
         $char = substr($description, $i, 1);
-        echo "<p>H" . $char . "H</p>";
+        // echo "<p>H" . $char . "H</p>";
         if (strcmp($char, "-") === 0) {
           $time = substr($description, 0, $i);
-          echo "<p>time" . $time . "time</p>";
-          echo "<p>description" . $description . "description</p>";
-          echo "<p>i" . $i . "i</p>";
+          // echo "<p>time" . $time . "time</p>";
+          // echo "<p>description" . $description . "description</p>";
+          // echo "<p>i" . $i . "i</p>";
           $description = substr($description, $i + 2);
           break;
         }
@@ -119,8 +119,9 @@
         $description = "";
       }
       echo "<h3>" . $entry->title . "</h3>";
-      echo "<p>location" . $entry->location . "location</p>";
-      // echo "<p>" . $entry->description . "</p>";
+      echo "<p>" . $time . "</p>";
+      echo "<p>" . $location . "</p>";
+      echo "<p>" . $description . "</p>";
     }
     // echo "</ul>";
   }
