@@ -82,7 +82,7 @@ require('db_connection.php');
   </head>
 <body>
   <div id="results">
-    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" id="addForm">
+    <form action="" method="post" id="addForm">
       <b>Title: </b><span><?= $titleErr;?></span><br>
       <input type="text" name="title" value="<?=$title?>"><br><br>
       <b>Time: </b><span><?= $timeErr;?></span><br>
