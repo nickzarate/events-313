@@ -60,7 +60,7 @@ require('db_connection.php');
           }).done(function(data) {
             $("#results").html(data);
           });
-          e.preventDefault();
+          // e.preventDefault();
         });
       });
     </script>
