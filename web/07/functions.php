@@ -94,8 +94,8 @@
 
       for($i = 0; $i < $strlen; $i++) {
         $char = substr($str, $i, 1);
+        echo "<p>H" . $char . "</p>";
         if (strcmp($char, "-") === 0) {
-          echo "<p>H" . $char . "</p>";
           $time = substr($description, 0, $i);
           $description = substr($description, $i + 2);
           break;
